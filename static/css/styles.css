@@ -1,0 +1,91 @@
+/* styles.css */
+
+/* Basic reset for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    background-color: #2e2e2e; /* Dark background */
+    color: #ffffff; /* Light text */
+    font-family: Arial, sans-serif; /* Simple font */
+}
+
+/* Container for central alignment */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #555; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #3c3c3c; /* Slightly lighter background */
+}
+
+/* Form elements */
+input[type="file"],
+input[type="text"],
+button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #777; /* Light border */
+    border-radius: 3px; /* Rounded corners */
+    background-color: #444; /* Input background */
+    color: #ffffff; /* Input text color */
+}
+
+button {
+    background-color: #007bff; /* Button color */
+    cursor: pointer;
+    border: none; /* Remove border */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker button on hover */
+}
+
+/* List styles */
+ul {
+    list-style-type: none; /* Remove bullet points */
+}
+
+li {
+    padding: 5px;
+    border-bottom: 1px solid #555; /* Divider between list items */
+}
+
+a {
+    color: #61dafb; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+#search {
+    width: calc(100% - 20px); /* Match the width of other inputs */
+    padding: 10px; /* Consistent padding */
+    margin: 10px 0; /* Margins for spacing */
+    border: 1px solid #777; /* Border similar to other inputs */
+    border-radius: 3px; /* Rounded corners */
+    background-color: #444; /* Background color */
+    color: #ffffff; /* Text color */
+}
+
+button {
+    padding: 10px 15px; /* Button padding */
+    margin: 10px 0; /* Margin for spacing */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 3px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}

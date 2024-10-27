@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local File Transfer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/filter.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/searchToggle.js') }}" defer></script> <!-- Include the new JS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>File Transfer</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="files" multiple required>
+            <input type="text" name="description" maxlength="50" placeholder="Global description (50 chars max)" required>
+            <button type="submit">Upload</button>
+        </form>
+
+        <h2>Files:</h2>
+        <input type="text" id="search" placeholder="Search by file name..." onkeyup="filterFiles()">
+        <button id="toggleSearchButton">Toggle Search Mode (Description)</button> <!-- Button updated -->
+        <ul id="fileList">
+            {% for file, description in files.items() %}
+                <li data-description="{{ description }}"> <!-- Store description in data attribute -->
+                    <a href="{{ url_for('download_file', filename=file) }}">{{ file }}</a>
+                    {% if description %}
+                        - {{ description }}
+                        <form action="/delete/{{ file }}" method="post" style="display:inline; margin-left: 5px;"> <!-- Delete form -->
+                            <button type="submit" 
+                                    style="background-color: #ff4d4d; color: white; border: none; border-radius: 3px; padding: 2px 5px; font-size: 12px; cursor: pointer;"
+                                    onclick="return confirm('Are you sure you want to delete this file?');">Delete</button>
+                        </form>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
