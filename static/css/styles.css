@@ -38,13 +38,16 @@ button {
 }
 
 button {
+    padding: 10px 15px; /* Button padding */
+    margin: 10px 0; /* Margin for spacing */
     background-color: #007bff; /* Button color */
-    cursor: pointer;
-    border: none; /* Remove border */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 3px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
 }
-
 button:hover {
-    background-color: #0056b3; /* Darker button on hover */
+    background-color: #003c7d; /* Darker button on hover */
 }
 
 /* List styles */
@@ -76,16 +79,3 @@ a:hover {
     color: #ffffff; /* Text color */
 }
 
-button {
-    padding: 10px 15px; /* Button padding */
-    margin: 10px 0; /* Margin for spacing */
-    background-color: #007bff; /* Button color */
-    color: white; /* Text color */
-    border: none; /* No border */
-    border-radius: 3px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor */
-}
-
-button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-}
