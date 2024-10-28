@@ -49,7 +49,7 @@ def upload_file():
 def download_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
-@app.route('/delete/<filename>', methods=['POST'])
+@app.route('/uploads/<filename>', methods=['POST'])
 def delete_file(filename):
     # Delete the file from the filesystem
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
@@ -65,4 +65,4 @@ def delete_file(filename):
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=80)
